@@ -5,7 +5,7 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database');
-
+const labCourse=require('./routes/lab_course')
 // Connect To Database
 mongoose.connect(config.database);
 
@@ -42,7 +42,7 @@ app.use(passport.session());
 require('./config/passport')(passport);
 
 app.use('/users', users);
-
+app.use('/content',labCourse);
 // Index Route
 app.get('/', (req, res) => {
     res.send('Invalid Endpoint');
