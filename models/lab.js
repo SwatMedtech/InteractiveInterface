@@ -19,7 +19,7 @@ const labSchema = mongoose.Schema({
 
 });
 
-const Lab = module.exports = mongoose.model('Lab', tutorialSchema);
+const Lab = module.exports = mongoose.model('Lab', labSchema);
 
 module.exports.getLabById = function(id, callback){
     Lab.findById(id, callback);
