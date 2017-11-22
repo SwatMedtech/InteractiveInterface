@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-const tutorial = require('../models/tutorial');
+const lab = require('../models/lab');
 
 
-router.get('/tutorial',(req,res,next)=> {
+router.get('/lab',(req,res,next)=> {
 
     console.log("boom");
-    tutorial.find({}, function (err, tutorials) {
+    lab.find({}, function (err, labs) {
         let s = {};
         i=-1;
-        tutorials.forEach(tuto =>{
-            s[++i] = tuto;
+        labs.forEach(la =>{
+            s[++i] = la;
         });
         res.send(s);
     });
@@ -19,13 +19,13 @@ router.get('/tutorial',(req,res,next)=> {
 
 
 
-router.post('/tutorial',(req,res,next)=>{
-    const newTutorial=new tutorial({
+router.post('/lab',(req,res,next)=>{
+    const newLab=new lab({
         name:req.body.name,
         content:req.body.content,
         number: req.body.number
     });
-    tutorial.addTutorial(newTutorial,(err)=>{
+    lab.addLab(newLab,(err)=>{
         if(err){
             res.json({success:false, msg:'failed to add new lab course !!'});
         }else { res.json({success:true, msg:'success to add new lab course !!'});

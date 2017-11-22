@@ -52,6 +52,14 @@ app.use('/content',labCourse);
 const tutorial=require('./routes/tutorial')
 app.use('/content',tutorial);
 
+//Experiment
+const experiment=require('./routes/experiments')
+app.use('/content',experiment);
+
+
+//lab
+const lab=require('./routes/labs')
+app.use('/content',lab);
 
 
 // Index Route
