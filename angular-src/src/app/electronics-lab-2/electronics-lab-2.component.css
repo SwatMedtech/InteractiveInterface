@@ -1,0 +1,13 @@
+h4 {
+  padding-top: 1.5rem;
+}
+
+.title {
+  width: 1%;
+  max-width: 1%;
+  white-space: nowrap;
+}
+
+.title a {
+  color: black !important;
+}
