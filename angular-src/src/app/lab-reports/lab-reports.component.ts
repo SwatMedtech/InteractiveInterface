@@ -29,7 +29,8 @@ export class LabReportsComponent implements OnInit {
   getData() {
     this.request.labCourseget().subscribe(data => {
       this.labCourses = data;
-      this.length = data.length;
+      this.length = Object.keys(data).length;
+      this.array = new Array(this.length);
     });
   }
   increment() {
@@ -39,7 +40,6 @@ export class LabReportsComponent implements OnInit {
     this.number = this.number - 1;
   }
   ngOnInit() {
-    this.array = new Array(this.length);
     this.number = 1;
     this.getData();
   }

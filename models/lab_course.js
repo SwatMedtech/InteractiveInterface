@@ -18,7 +18,7 @@ const labCourseSchema = mongoose.Schema({
 
 });
 
-const Lab = module.exports = mongoose.model('Lab', labCourseSchema);
+const Lab = module.exports = mongoose.model('LabCourse', labCourseSchema);
 
 module.exports.getUserById = function(id, callback){
     Lab.findById(id, callback);
