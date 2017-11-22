@@ -28,10 +28,7 @@ module.exports.getUserByName = function(name, callback){
     const query = {name:name}
     Lab.findOne(query, callback);
 };
-module.exports.selectAll = function (callback) {
-    labCourseSchema.find();
 
-};
 module.exports.addLab = function (newLab,callback) {
 
     newLab.save(callback);

@@ -1,7 +1,20 @@
 const express = require('express');
 const router = express.Router();
 
-const labCourse = require('./lab_course');
+const labCourse = require('../models/lab_course');
+
+router.get('/labCourse',(req,res,next)=> {
+
+    console.log("boom");
+    labCourse.find({}, function (err, labs) {
+        let s = {};
+        i=-1;
+        labs.forEach(lab=>{
+            s[++i] = lab;
+        });
+        res.send(s);
+    });
+});
 
 router.post('/labCourse',(req,res,next)=>{
     const newLabCourse=new labCourse({
@@ -16,5 +29,7 @@ router.post('/labCourse',(req,res,next)=>{
         }
     });
 });
+
+
 
 module.exports=router;

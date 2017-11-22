@@ -43,6 +43,11 @@ require('./config/passport')(passport);
 
 app.use('/users', users);
 
+//labcourse
+const labCourse=require('./routes/lab_course')
+app.use('/content',labCourse);
+
+
 // Index Route
 app.get('/', (req, res) => {
     res.send('Invalid Endpoint');

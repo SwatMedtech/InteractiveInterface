@@ -14,7 +14,7 @@ const tutorialSchema = mongoose.Schema({
     labcourse :{
     },
 
-    content:{
+    url:{
         type: String,
         required:true
     },

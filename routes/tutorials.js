@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const tutorial = require('./tutorial');
+const tutorial = require('../models/tutorial');
 
 router.post('/tutorial',(req,res,next)=>{
     const newTutorial=new tutorial({
