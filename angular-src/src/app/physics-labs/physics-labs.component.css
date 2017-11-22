@@ -1,0 +1,9 @@
+.title {
+  width: 1%;
+  max-width: 1%;
+  white-space: nowrap;
+}
+
+.title a {
+  color: black !important;
+}
