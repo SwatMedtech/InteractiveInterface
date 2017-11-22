@@ -2,136 +2,52 @@
   <table class="table table-responsive-sm table-hover">
     <thead class="thead-light">
     <tr>
-      <th scope="col" class="title">Lab Report</th>
+      <th scope="col" class="title">Lab Course Name</th>
       <th scope="col" class="description">Description</th>
-      <th scope="col" class="lab">Lab</th>
       <th scope="col" class="action">Action</th>
     </tr>
     </thead>
     <tbody>
+
     <tr>
       <th class="title text"><span>title</span></th>
       <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
       <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
+        <button type="button" class="btn btn-sm btn-success">Edit</button>
         <button type="button" class="btn btn-sm btn-danger">Delete</button>
       </td>
     </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
+
     </tbody>
   </table>
-  <button class="btn btn-primary pull-right" (click)="modal.open()">Add</button>
-  <bs-modal #modal>
-    <bs-modal-header [showDismiss]="true">
-      <h4 class="modal-title"><b> Add lab report</b></h4>
-    </bs-modal-header>
-    <bs-modal-body>
-      <app-tinyeditor
-        [elementId]="'my-editor-id'"
-        (onEditorKeyup)="keyupHandlerFunction($event)"
-      >
-
-      </app-tinyeditor>
-    </bs-modal-body>
-    <bs-modal-footer [showDefaultButtons]="true"></bs-modal-footer>
+  <button class="btn btn-primary pull-right" (click)="validationModal.open()">Add</button>
+  <bs-modal #validationModal>
+    <form #modalForm="ngForm" (submit)="onSubmit()">
+      <bs-modal-header [showDismiss]="true">
+        <h4 class="modal-title">I'm a modal!</h4>
+      </bs-modal-header>
+      <bs-modal-body>
+        <div class="form-group">
+          <label for="firstName">Lab Course Name</label>
+          <input type="text" class="form-control" required [(ngModel)]="labName" name="labName" id="firstName">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Description</label>
+          <textarea class="form-control" required [(ngModel)]="description" name="description" id="lastName"></textarea>
+        </div>
+        <label for="number">Number</label>
+        <div class="form-group input-group spinner">
+          <input type="text" id="number" class="form-control" value="1" [(ngModel)]="number" name="number">
+          <div class="input-group-btn-vertical">
+            <button class="btn btn-default" type="button" (click)="increment()"><i class="fa fa-caret-up"></i></button>
+            <button class="btn btn-default" type="button" (click)="decrement()"><i class="fa fa-caret-down"></i></button>
+          </div>
+        </div>
+      </bs-modal-body>
+      <bs-modal-footer>
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="validationModal.dismiss()">Cancel</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!modalForm.valid" (click)="validationModal.close()">Save</button>
+      </bs-modal-footer>
+    </form>
   </bs-modal>
 </div>

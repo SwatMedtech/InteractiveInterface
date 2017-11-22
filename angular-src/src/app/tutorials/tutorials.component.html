@@ -9,128 +9,26 @@
     </tr>
     </thead>
     <tbody>
+
     <tr>
       <th class="title text"><span>title</span></th>
       <td class="description text"><span>Description to read about</span></td>
       <td class="lab text"><span>Some lab</span></td>
       <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
+        <button type="button" class="btn btn-sm btn-success">Edit</button>
         <button type="button" class="btn btn-sm btn-danger">Delete</button>
       </td>
     </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
-      <td class="lab text"><span>Some lab</span></td>
-      <td class="action">
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
-      </td>
-    </tr>
+
     </tbody>
   </table>
   <button class="btn btn-primary pull-right" (click)="modal.open()">Add</button>
   <bs-modal #modal>
     <bs-modal-header [showDismiss]="true">
-      <h4 class="modal-title"><b> Add tutorial</b></h4>
+      <h4 class="modal-title">I'm a modal!</h4>
     </bs-modal-header>
     <bs-modal-body>
-      <app-tinyeditor
-        [elementId]="'my-editor-id'"
-        (onEditorKeyup)="keyupHandlerFunction($event)"
-      >
-
-      </app-tinyeditor>
+      Hello World!
     </bs-modal-body>
     <bs-modal-footer [showDefaultButtons]="true"></bs-modal-footer>
   </bs-modal>
