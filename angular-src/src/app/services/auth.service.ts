@@ -17,6 +17,7 @@ export class AuthService {
     return this.http.post(ep, user,{headers: headers})
       .map(res => res.json());
   }
+
   loadToken(){
     const token = localStorage.getItem('id_token');
     this.authToken = token;

@@ -36,6 +36,8 @@ import { ElectronicsLabsComponent } from './electronics-labs/electronics-labs.co
 import { ElectronicsLab1Component } from './electronics-lab-1/electronics-lab-1.component';
 import { ElectronicsLab2Component } from './electronics-lab-2/electronics-lab-2.component';
 import { ElectronicsLab3Component } from './electronics-lab-3/electronics-lab-3.component';
+import { LabComponent } from './lab/lab.component';
+import { RequestService } from './services/request.service';
 
 
 const appRoutes: Routes =  [
@@ -46,7 +48,8 @@ const appRoutes: Routes =  [
       {path:'LabCourses', component:LabReportsComponent},
       {path:'Prelabs', component:PrelabsComponent},
       {path:'Tutorials', component:TutorialsComponent},
-      {path:'Experiments', component:ExperimentComponent}
+      {path:'Experiments', component:ExperimentComponent},
+      {path:'Lab', component:LabComponent}
     ]
   },
   { path:'labs', component:LabsComponent,
@@ -112,7 +115,8 @@ const appRoutes: Routes =  [
     ElectronicsLab3Component,
     ChemistryComponent,
     PhysicsComponent,
-    ElectronicsComponent
+    ElectronicsComponent,
+    LabComponent
   ],
   imports: [
     BrowserModule,
@@ -122,7 +126,7 @@ const appRoutes: Routes =  [
     BsModalModule,
     FlashMessagesModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, RequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
