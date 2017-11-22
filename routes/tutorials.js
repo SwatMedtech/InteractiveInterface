@@ -3,6 +3,22 @@ const router = express.Router();
 
 const tutorial = require('../models/tutorial');
 
+
+router.get('/tutorial',(req,res,next)=> {
+
+    console.log("boom");
+    tutorial.find({}, function (err, tutorials) {
+        let s = {};
+        i=-1;
+        labs.forEach(tutorials =>{
+            s[++i] = tuto;
+        });
+        res.send(s);
+    });
+});
+
+
+
 router.post('/tutorial',(req,res,next)=>{
     const newTutorial=new tutorial({
         name:req.body.name,

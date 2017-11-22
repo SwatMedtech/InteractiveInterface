@@ -11,8 +11,7 @@ const tutorialSchema = mongoose.Schema({
         required:true
     },
     labnumber :{},
-    labcourse :{
-    },
+    labcourse :{},
 
     url:{
         type: String,
@@ -31,10 +30,9 @@ module.exports.getTutorialByName = function(name, callback){
     const query = {name:name}
     Tutorial.findOne(query, callback);
 };
-module.exports.selectAll = function (callback) {
-    tutorialSchema.find();
 
-};
+
+
 module.exports.addTutorial= function (newTutorial,callback) {
 
     newTutorial.save(callback);

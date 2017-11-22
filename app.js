@@ -48,6 +48,12 @@ const labCourse=require('./routes/lab_course')
 app.use('/content',labCourse);
 
 
+//tutorials
+const tutorial=require('./routes/tutorial')
+app.use('/content',tutorial);
+
+
+
 // Index Route
 app.get('/', (req, res) => {
     res.send('Invalid Endpoint');
