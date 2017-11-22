@@ -14,11 +14,18 @@ export class RequestService {
     return this.http.post(ep, labCourse,{headers: headers})
       .map(res => res.json());
   }
-  prepEndpoint(ep){
-    if(this.isDev){
+  labCourseget() {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    const ep = this.prepEndpoint('content/labCourse');
+    return this.http.get(ep,{headers: headers})
+      .map(res => res.json());
+  }
+  prepEndpoint(ep) {
+    if(this.isDev) {
       return ep;
     } else {
-      return 'http://localhost:8080/'+ep;
+      return 'http://localhost:8080/' + ep;
     }
   }
 

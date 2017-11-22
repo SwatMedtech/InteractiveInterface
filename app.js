@@ -49,7 +49,7 @@ app.use('/content',labCourse);
 
 
 //tutorials
-const tutorial=require('./routes/tutorial')
+const tutorial=require('./routes/tutorials')
 app.use('/content',tutorial);
 
 

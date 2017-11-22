@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RequestService} from "../services/request.service";
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-lab-reports',
@@ -11,7 +12,10 @@ export class LabReportsComponent implements OnInit {
   labName: string;
   description: string;
   number: number;
-  constructor(private request: RequestService) { }
+  labCourses: any;
+  length: number;
+  array: Array<any>;
+  constructor(private request: RequestService) {}
   onSubmit() {
     const labCourse  = {
       labName: this.labName,
@@ -22,6 +26,12 @@ export class LabReportsComponent implements OnInit {
       console.log(data);
     });
   }
+  getData() {
+    this.request.labCourseget().subscribe(data => {
+      this.labCourses = data;
+      this.length = data.length;
+    });
+  }
   increment() {
     this.number = this.number + 1 ;
   }
@@ -29,7 +39,9 @@ export class LabReportsComponent implements OnInit {
     this.number = this.number - 1;
   }
   ngOnInit() {
+    this.array = new Array(this.length);
     this.number = 1;
+    this.getData();
   }
 
 }

@@ -4,14 +4,16 @@
     <tr>
       <th scope="col" class="title">Lab Course Name</th>
       <th scope="col" class="description">Description</th>
+      <th scope="col" class="number">Number</th>
       <th scope="col" class="action">Action</th>
     </tr>
     </thead>
     <tbody>
 
-    <tr>
-      <th class="title text"><span>title</span></th>
-      <td class="description text"><span>Description to read about</span></td>
+    <tr *ngFor="let labCourse of array ; let i = index">
+      <td class="title text"><span>{{labCourses[i].name}}</span></td>
+      <td class="description text"><span>{{labCourses[i].content}}</span></td>
+      <td class="description text"><span>{{labCourses[i].number}}</span></td>
       <td class="action">
         <button type="button" class="btn btn-sm btn-success">Edit</button>
         <button type="button" class="btn btn-sm btn-danger">Delete</button>
