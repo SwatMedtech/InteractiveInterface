@@ -25,6 +25,7 @@ export class LabReportsComponent implements OnInit {
     this.request.labCoursesPost(labCourse).subscribe(data =>{
       console.log(data);
     });
+    this.getData();
   }
   getData() {
     this.request.labCourseget().subscribe(data => {
