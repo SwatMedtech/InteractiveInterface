@@ -20,12 +20,12 @@ const labCourseSchema = mongoose.Schema({
 
 const Lab = module.exports = mongoose.model('LabCourse', labCourseSchema);
 
-module.exports.getUserById = function(id, callback){
-    Lab.findById(id, callback);
+module.exports.getLabCourseById = function(id, callback){
+    Lab.findById(id,callback);
 };
 
-module.exports.getUserByName = function(name, callback){
-    const query = {name:name}
+module.exports.getUserByName = function(id, callback){
+    const query = {_id:id}
     Lab.findOne(query, callback);
 };
 

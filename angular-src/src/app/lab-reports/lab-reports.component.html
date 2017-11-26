@@ -10,46 +10,86 @@
     </thead>
     <tbody>
 
-    <tr *ngFor="let labCourse of array ; let i = index">
-      <td class="title text"><span>{{labCourses[i].name}}</span></td>
-      <td class="description text"><span>{{labCourses[i].content}}</span></td>
-      <td class="description text"><span>{{labCourses[i].number}}</span></td>
+    <tr *ngFor="let labCourse of labCourses ; let i = index">
+      <td class="title text"><span>{{labCourse.name}}</span></td>
+      <td class="description text"><span>{{labCourse.content}}</span></td>
+      <td class="description text"><span>{{labCourse.number}}</span></td>
       <td class="action">
-        <button type="button" class="btn btn-sm btn-success">Edit</button>
-        <button type="button" class="btn btn-sm btn-danger">Delete</button>
+        <a class="btn btn-sm btn-success" data-toggle="modal" href="#updateModal">Edit</a>
+          <div class="modal fade" id="updateModal" role="dialog">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button class="close" type="button" data-dismiss="modal" id="close">&times;</button>
+                  <h3>Update Your Lab Course</h3>
+                </div>
+                <form (submit)="onSubmitEdit(i)">
+                  <div class="modal-body">
+                      <div class="form-group">
+                        <label for="labNameEdit">Lab Course Description:</label>
+                        <input class="form-control" id="labNameEdit" type="text" value="{{labCourse.name}}">
+                      </div>
+                      <div class="form-group">
+                        <label for="descriptionEdit">Lab Course Name:</label>
+                        <textarea class="form-control" id="descriptionEdit" type="text" value="{{labCourse.content}}"></textarea>
+                      </div>
+                      <label for="numberEdit">lab Course Number:</label>
+                      <div class="form-group input-group spinner">
+                        <input type="text" id="numberEdit" class="form-control" value="{{labCourse.number}}" name="number">
+                        <div class="input-group-btn-vertical">
+                          <button class="btn btn-default" type="button" (click)="incrementEdit()"><i class="fa fa-caret-up"></i></button>
+                          <button class="btn btn-default" type="button" (click)="decrementEdit()"><i class="fa fa-caret-down"></i></button>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                    <a class="btn btn-md btn-danger" data-dismiss="modal">Cancel</a>
+                    <button type="submit" class="btn btn-md btn-primary">Save</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        <button type="button" class="btn btn-sm btn-danger" (click)="removeLabCourse(i)">Delete</button>
+
       </td>
     </tr>
 
     </tbody>
   </table>
-  <button class="btn btn-primary pull-right" (click)="validationModal.open()">Add</button>
-  <bs-modal #validationModal>
-    <form #modalForm="ngForm" (submit)="onSubmit()">
-      <bs-modal-header [showDismiss]="true">
-        <h4 class="modal-title">I'm a modal!</h4>
-      </bs-modal-header>
-      <bs-modal-body>
-        <div class="form-group">
-          <label for="firstName">Lab Course Name</label>
-          <input type="text" class="form-control" required [(ngModel)]="labName" name="labName" id="firstName">
+  <a class="btn btn-md btn-primary pull-right" data-toggle="modal" href="#addModal">Add</a>
+  <div class="modal fade" id="addModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" type="button" data-dismiss="modal" id="x">&times;</button>
+          <h3>Add Your Lab Course</h3>
         </div>
-        <div class="form-group">
-          <label for="lastName">Description</label>
-          <textarea class="form-control" required [(ngModel)]="description" name="description" id="lastName"></textarea>
-        </div>
-        <label for="number">Number</label>
-        <div class="form-group input-group spinner">
-          <input type="text" id="number" class="form-control" value="1" [(ngModel)]="number" name="number">
-          <div class="input-group-btn-vertical">
-            <button class="btn btn-default" type="button" (click)="increment()"><i class="fa fa-caret-up"></i></button>
-            <button class="btn btn-default" type="button" (click)="decrement()"><i class="fa fa-caret-down"></i></button>
+        <form (submit)="onSubmit()">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="labName">Lab Course Description:</label>
+              <input class="form-control" id="labName" type="text" [(ngModel)]="labName" name="labName">
+            </div>
+            <div class="form-group">
+              <label for="description">Lab Course Name:</label>
+              <textarea class="form-control" id="description" type="text" [(ngModel)]="description" name="description"></textarea>
+            </div>
+            <label for="number">lab Course Number:</label>
+            <div class="form-group input-group spinner">
+              <input type="text" id="number" class="form-control" name="number" [(ngModel)]="number">
+              <div class="input-group-btn-vertical">
+                <button class="btn btn-default" type="button" (click)="increment()"><i class="fa fa-caret-up"></i></button>
+                <button class="btn btn-default" type="button" (click)="decrement()"><i class="fa fa-caret-down"></i></button>
+              </div>
+            </div>
           </div>
-        </div>
-      </bs-modal-body>
-      <bs-modal-footer>
-        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="validationModal.dismiss()">Cancel</button>
-        <button type="submit" class="btn btn-primary" [disabled]="!modalForm.valid" (click)="validationModal.close()">Save</button>
-      </bs-modal-footer>
-    </form>
-  </bs-modal>
+          <div class="modal-footer">
+            <a class="btn btn-md btn-danger" data-dismiss="modal">Cancel</a>
+            <button type="submit" class="btn btn-md btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
