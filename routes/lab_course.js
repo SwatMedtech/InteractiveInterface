@@ -48,8 +48,12 @@ router.put('/labCourse/:id', (req,res)=>{
 router.delete('/labCourse/:id', (req, res)=>{
    labCourse.getLabCourseById(req.params.id, (err, lab_course)=>{
       lab_course.remove((err)=>{
-          if (err) return err;
-          else console.log("removed");
+          if (err){
+              res.json({success:false, msg:'Failed to delete labCourse'});
+          }
+          else{
+              res.json({success:true, msg:'The LabCourse was successfully deleted'});
+          }
       });
    });
 });

@@ -10,12 +10,23 @@ const labSchema = mongoose.Schema({
         type:Number,
         required:true
     },
-    labcourse :{},
+    labcourseNumber :{
+        type:Number,
+        required:true
+    },
 
-    url:{
+    experiment:{
         type: String,
         required:true
     },
+    tutorial: {
+        type: String,
+        required: false
+    },
+    prelab: {
+        type: String,
+        required: false
+    }
 
 });
 
@@ -32,8 +43,8 @@ module.exports.getLabByName = function(name, callback){
 
 
 
-module.exports.addLab= function (newTutorial,callback) {
+module.exports.addLab= function (newLab,callback) {
 
-    newTutorial.save(callback);
+    newLab.save(callback);
 
 };

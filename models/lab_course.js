@@ -29,8 +29,8 @@ module.exports.getUserByName = function(id, callback){
     Lab.findOne(query, callback);
 };
 
-module.exports.addLab = function (newLab,callback) {
+module.exports.addLab = function (newLabCourse,callback) {
 
-    newLab.save(callback);
+    newLabCourse.save(callback);
 
 };

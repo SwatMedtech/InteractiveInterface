@@ -39,23 +39,14 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./config/passport')(passport);
 
+//User
+require('./config/passport')(passport);
 app.use('/users', users);
 
 //labcourse
 const labCourse=require('./routes/lab_course')
 app.use('/content',labCourse);
-
-
-//tutorials
-const tutorial=require('./routes/tutorials')
-app.use('/content',tutorial);
-
-//Experiment
-const experiment=require('./routes/experiments')
-app.use('/content',experiment);
-
 
 //lab
 const lab=require('./routes/labs')
