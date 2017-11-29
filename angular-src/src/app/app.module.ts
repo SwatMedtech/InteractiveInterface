@@ -39,8 +39,8 @@ import { ElectronicsLab2Component } from './electronics-lab-2/electronics-lab-2.
 import { ElectronicsLab3Component } from './electronics-lab-3/electronics-lab-3.component';
 import { LabComponent } from './lab/lab.component';
 import { RequestService } from './services/request.service';
-import { SurveyEditorComponent } from './survey-editor/survey-editor.component';
 import { SurveyComponent } from './survey/survey.component';
+import { SurveyEditorComponent } from './survey-editor/survey-editor.component';
 
 
 const appRoutes: Routes =  [
@@ -120,8 +120,8 @@ const appRoutes: Routes =  [
     PhysicsComponent,
     ElectronicsComponent,
     LabComponent,
-    SurveyEditorComponent,
-    SurveyComponent
+    SurveyComponent,
+    SurveyEditorComponent
   ],
   imports: [
     BrowserModule,

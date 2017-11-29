@@ -34,18 +34,18 @@
           <div class="modal-body">
             <div class="form-group">
               <label for="labName">Lab Name:</label>
-              <input class="form-control" id="labName" type="text">
+              <input class="form-control" id="labName" type="text" [ngModel]="labName">
             </div>
             <br>
             <label for="experimentContent">Experiment :</label>
+
             <app-tinyeditor id="experimentContent" [elementId]="'addLab'"></app-tinyeditor>
             <br>
             <label>Prelab:</label>
-            <app-survey [json]="json"></app-survey>
-            <h1>Survey JS Editor</h1><app-survey-editor [json]="json" (surveySaved)="onSurveySaved($event)"></app-survey-editor>
+            <app-survey-editor></app-survey-editor>
             <label for="numberEdit">lab Course Number:</label>
             <div class="form-group input-group">
-              <input type="text" id="numberEdit" class="form-control" name="number">
+              <input type="text" id="numberEdit" class="form-control" name="number" [ngModel]="labNumber">
               <div class="input-group-btn-vertical">
                 <button class="btn btn-default" type="button" (click)="incrementEdit()"><i class="fa fa-caret-up"></i></button>
                 <button class="btn btn-default" type="button" (click)="decrementEdit()"><i class="fa fa-caret-down"></i></button>
@@ -60,4 +60,5 @@
       </div>
     </div>
   </div>
+  <link type="text/css" rel="stylesheet" id="a" href="">
 </div>
