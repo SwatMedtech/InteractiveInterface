@@ -39,6 +39,8 @@ import { ElectronicsLab2Component } from './electronics-lab-2/electronics-lab-2.
 import { ElectronicsLab3Component } from './electronics-lab-3/electronics-lab-3.component';
 import { LabComponent } from './lab/lab.component';
 import { RequestService } from './services/request.service';
+import { SurveyEditorComponent } from './survey-editor/survey-editor.component';
+import { SurveyComponent } from './survey/survey.component';
 
 
 const appRoutes: Routes =  [
@@ -84,7 +86,7 @@ const appRoutes: Routes =  [
       }
     ]
   },
-  {path:'*', component: HomeComponent},
+  {path: '*', component: HomeComponent},
 ]
 
 @NgModule({
@@ -117,7 +119,9 @@ const appRoutes: Routes =  [
     ChemistryComponent,
     PhysicsComponent,
     ElectronicsComponent,
-    LabComponent
+    LabComponent,
+    SurveyEditorComponent,
+    SurveyComponent
   ],
   imports: [
     BrowserModule,

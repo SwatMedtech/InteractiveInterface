@@ -2,9 +2,9 @@
   <table class="table table-responsive-sm table-hover">
     <thead class="thead-light">
     <tr>
-      <th scope="col" class="title">Lab Report</th>
+      <th scope="col" class="title">Lab Name</th>
       <th scope="col" class="description">Description</th>
-      <th scope="col" class="lab">Lab</th>
+      <th scope="col" class="lab">Lab Course</th>
       <th scope="col" class="action">Action</th>
     </tr>
     </thead>
@@ -22,14 +22,42 @@
 
     </tbody>
   </table>
-  <button class="btn btn-primary pull-right" (click)="modal.open()">Add</button>
-  <bs-modal #modal>
-    <bs-modal-header [showDismiss]="true">
-      <h4 class="modal-title">I'm a modal!</h4>
-    </bs-modal-header>
-    <bs-modal-body>
-      Hello World!
-    </bs-modal-body>
-    <bs-modal-footer [showDefaultButtons]="true"></bs-modal-footer>
-  </bs-modal>
+  <button class="btn btn-primary pull-right" data-toggle="modal" href="#addModalLab">Add</button>
+  <div class="modal fade" id="addModalLab" role="dialog">
+    <div class="modal-admin">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" type="button" data-dismiss="modal" id="close">&times;</button>
+          <h3>Add Your Lab</h3>
+        </div>
+        <form (submit)="onSubmit()">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="labName">Lab Name:</label>
+              <input class="form-control" id="labName" type="text">
+            </div>
+            <br>
+            <label for="experimentContent">Experiment :</label>
+            <app-tinyeditor id="experimentContent" [elementId]="'addLab'"></app-tinyeditor>
+            <br>
+            <label>Prelab:</label>
+            <app-survey [json]="json"></app-survey>
+            <h1>Survey JS Editor</h1><app-survey-editor [json]="json" (surveySaved)="onSurveySaved($event)"></app-survey-editor>
+            <label for="numberEdit">lab Course Number:</label>
+            <div class="form-group input-group">
+              <input type="text" id="numberEdit" class="form-control" name="number">
+              <div class="input-group-btn-vertical">
+                <button class="btn btn-default" type="button" (click)="incrementEdit()"><i class="fa fa-caret-up"></i></button>
+                <button class="btn btn-default" type="button" (click)="decrementEdit()"><i class="fa fa-caret-down"></i></button>
+              </div>
+            </div>
+          </div>
+        <div class="modal-footer">
+          <a class="btn btn-md btn-danger" data-dismiss="modal">Cancel</a>
+          <button type="submit" class="btn btn-md btn-primary">Save</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
