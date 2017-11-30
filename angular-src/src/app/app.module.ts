@@ -20,7 +20,6 @@ import { PrelabsComponent } from './prelabs/prelabs.component';
 import { TutorialsComponent } from './tutorials/tutorials.component';
 import { ExperimentComponent } from './experiment/experiment.component';
 import { TinyeditorComponent } from './tinyeditor/tinyeditor.component';
-import { BsModalModule } from 'ng2-bs3-modal';
 import { LabsComponent } from './labs/labs.component';
 import { ChemistryComponent } from './chemistry/chemistry.component';
 import { ChemistryLabsComponent } from './chemistry-labs/chemistry-labs.component';
@@ -128,7 +127,6 @@ const appRoutes: Routes =  [
     RouterModule.forRoot(appRoutes),
     HttpModule,
     FormsModule,
-    BsModalModule,
     HttpClientModule,
     FlashMessagesModule
   ],

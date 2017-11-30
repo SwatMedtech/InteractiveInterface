@@ -34,7 +34,7 @@
           <div class="modal-body">
             <div class="form-group">
               <label for="labName">Lab Name:</label>
-              <input class="form-control" id="labName" type="text" [ngModel]="labName">
+              <input class="form-control" id="labName" type="text">
             </div>
             <br>
             <label for="experimentContent">Experiment :</label>
@@ -45,7 +45,7 @@
             <app-survey-editor></app-survey-editor>
             <label for="numberEdit">lab Course Number:</label>
             <div class="form-group input-group">
-              <input type="text" id="numberEdit" class="form-control" name="number" [ngModel]="labNumber">
+              <input type="text" id="numberEdit" class="form-control" name="number">
               <div class="input-group-btn-vertical">
                 <button class="btn btn-default" type="button" (click)="incrementEdit()"><i class="fa fa-caret-up"></i></button>
                 <button class="btn btn-default" type="button" (click)="decrementEdit()"><i class="fa fa-caret-down"></i></button>
