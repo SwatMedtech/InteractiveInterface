@@ -16,9 +16,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { LabReportsComponent } from './lab-reports/lab-reports.component';
-import { PrelabsComponent } from './prelabs/prelabs.component';
-import { TutorialsComponent } from './tutorials/tutorials.component';
-import { ExperimentComponent } from './experiment/experiment.component';
 import { TinyeditorComponent } from './tinyeditor/tinyeditor.component';
 import { LabsComponent } from './labs/labs.component';
 import { ChemistryComponent } from './chemistry/chemistry.component';
@@ -48,9 +45,6 @@ const appRoutes: Routes =  [
   {path:'dashboard', component: DashboardComponent, /* canActivate:[AuthGuard], */
     children:[
       {path:'LabCourses', component:LabReportsComponent},
-      {path:'Prelabs', component:PrelabsComponent},
-      {path:'Tutorials', component:TutorialsComponent},
-      {path:'Experiments', component:ExperimentComponent},
       {path:'Lab', component:LabComponent}
     ]
   },
@@ -98,9 +92,6 @@ const appRoutes: Routes =  [
     FooterComponent,
     SidenavComponent,
     LabReportsComponent,
-    PrelabsComponent,
-    TutorialsComponent,
-    ExperimentComponent,
     TinyeditorComponent,
     LabsComponent,
     ChemistryLabsComponent,
