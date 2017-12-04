@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+var Schema = mongoose.Schema;
 
 const labCourseSchema = mongoose.Schema({
     name:{
@@ -15,6 +15,7 @@ const labCourseSchema = mongoose.Schema({
         type: String,
         required:true
     },
+    labs:[{ type: Schema.Types.ObjectId, ref: 'Lab' }]
 
 });
 
@@ -24,10 +25,6 @@ module.exports.getLabCourseById = function(id, callback){
     Lab.findById(id,callback);
 };
 
-module.exports.getUserByName = function(id, callback){
-    const query = {_id:id}
-    Lab.findOne(query, callback);
-};
 
 module.exports.addLab = function (newLabCourse,callback) {
 

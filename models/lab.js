@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 
 const labSchema = mongoose.Schema({
@@ -10,23 +11,15 @@ const labSchema = mongoose.Schema({
         type:Number,
         required:true
     },
-    labcourseNumber :{
-        type:Number,
-        required:true
-    },
-
     experiment:{
         type: String,
         required:true
     },
-    tutorial: {
+    preLab: {
         type: String,
         required: false
     },
-    prelab: {
-        type: String,
-        required: false
-    }
+    labCourse:{type:Schema.Types.ObjectId, ref:'LabCourse'}
 
 });
 
@@ -45,6 +38,9 @@ module.exports.getLabByName = function(name, callback){
 
 module.exports.addLab= function (newLab,callback) {
 
-    newLab.save(callback);
+    newLab.save((err,result)=>{
+        console.log(err);
+        console.log(result);
+    });
 
 };

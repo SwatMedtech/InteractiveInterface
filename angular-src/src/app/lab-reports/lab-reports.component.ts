@@ -10,7 +10,7 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 })
 export class LabReportsComponent implements OnInit {
 
-  labName: string;
+  labCourseName: string;
   description: string;
   number: number;
   labCourses: Array<any>;
@@ -18,7 +18,7 @@ export class LabReportsComponent implements OnInit {
   constructor(private request: RequestService, private flashMessage: FlashMessagesService) {}
   onSubmit() {
     const labCourse  = {
-      labName: this.labName,
+      labName: this.labCourseName,
       description: this.description,
       number: this.number
     };
@@ -32,9 +32,9 @@ export class LabReportsComponent implements OnInit {
           cssClass: 'alert-danger text-center',
           timeout: 3000});
       }
+      this.getData();
     });
     document.getElementById('x').click();
-    this.getData();
   }
   getData() {
     this.request.labCoursesGet().subscribe(data => {
@@ -61,9 +61,9 @@ export class LabReportsComponent implements OnInit {
           cssClass: 'alert-danger text-center',
           timeout: 3000});
       }
+      this.getData();
     });
     document.getElementById('close').click();
-    this.getData();
   }
   increment() {
     this.number = this.number + 1 ;

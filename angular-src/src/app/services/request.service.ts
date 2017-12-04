@@ -33,6 +33,26 @@ export class RequestService {
     const ep = this.prepEndpoint(`content/labCourse/${id}`);
     return this.http.delete(ep, {headers: headers}).map(res => res.json());
   }
+  labPost(lab) {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    const ep = this.prepEndpoint('content/lab');
+    return this.http.post(ep, lab, {headers: headers})
+      .map(res => res.json());
+  }
+  labGet() {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    const ep = this.prepEndpoint('content/lab');
+    return this.http.get(ep, {headers: headers})
+      .map(res => res.json());
+  }
+  removeLab(id){
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    const ep = this.prepEndpoint(`content/lab/${id}`);
+    return this.http.delete(ep, {headers: headers}).map(res => res.json());
+  }
   prepEndpoint(ep) {
     if (this.isDev) {
       return ep;
