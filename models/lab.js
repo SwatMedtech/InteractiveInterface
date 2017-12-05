@@ -38,9 +38,6 @@ module.exports.getLabByName = function(name, callback){
 
 module.exports.addLab= function (newLab,callback) {
 
-    newLab.save((err,result)=>{
-        console.log(err);
-        console.log(result);
-    });
+    newLab.save(callback);
 
 };

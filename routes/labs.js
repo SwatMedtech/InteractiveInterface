@@ -30,6 +30,7 @@ router.post('/lab',(req,res,next)=>{
 
     });
     lab.addLab(newLab,(err)=>{
+        console.log(err);
         if(err){
             res.json({success:false, msg:'failed to add new lab '});
         }else { res.json({success:true, msg:'A new Lab has been Added Successfully :D !!'});

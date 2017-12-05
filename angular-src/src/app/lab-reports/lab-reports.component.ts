@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RequestService} from '../services/request.service';
 import 'rxjs/add/operator/map';
-import {FlashMessagesService} from 'angular2-flash-messages';
+import {FlashMessagesService} from 'angular2-flash-messages/module';
 
 @Component({
   selector: 'app-lab-reports',
@@ -79,7 +79,7 @@ export class LabReportsComponent implements OnInit {
   }
   removeLabCourse(i) {
     this.request.removeLabCourse(this.labCourses[i]._id).subscribe(data => {
-      console.log(data);
+      console.log();
     });
     this.getData();
   }

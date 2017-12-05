@@ -47,7 +47,7 @@ export class RequestService {
     return this.http.get(ep, {headers: headers})
       .map(res => res.json());
   }
-  removeLab(id){
+  removeLab(id) {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     const ep = this.prepEndpoint(`content/lab/${id}`);

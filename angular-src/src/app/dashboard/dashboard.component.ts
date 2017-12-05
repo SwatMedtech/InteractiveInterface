@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as SurveyEditor from 'surveyjs-editor';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +6,6 @@ import * as SurveyEditor from 'surveyjs-editor';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  editor: SurveyEditor.SurveyEditor;
 
   constructor() { }
 
