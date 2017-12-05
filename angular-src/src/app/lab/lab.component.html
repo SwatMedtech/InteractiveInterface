@@ -4,7 +4,7 @@
     <tr>
       <th scope="col" class="title">Lab Name</th>
       <th scope="col" class="description">Related Lab Course</th>
-      <th scope="col" class="lab">Lab Course</th>
+      <th scope="col" class="lab">Lab Number</th>
       <th scope="col" class="action">Action</th>
     </tr>
     </thead>
@@ -46,7 +46,7 @@
                   </div>
                   <label for="numberEdit">Lab Number:</label>
                   <div class="form-group input-group">
-                    <input type="text" id="numberEdit" class="form-control" name="labNumber" value="{{lab.number}}">
+                    <input type="number" id="numberEdit" class="form-control" name="labNumber" value="{{lab.number}}">
                     <div class="input-group-btn-vertical">
                       <button class="btn btn-default" type="button" (click)="incrementEdit()"><i class="fa fa-caret-up"></i></button>
                       <button class="btn btn-default" type="button" (click)="decrementEdit()"><i class="fa fa-caret-down"></i></button>

@@ -50,7 +50,6 @@ router.put('/lab/:id', (req,res)=>{
         lab.prelab= req.body.prelab;
 
         lab.save((err,updatedLab) => {
-            console.log(updatedLab);
             if(err){
                 res.json({success:false, msg:'failed to update lab'});
             }else{

@@ -1,0 +1,17 @@
+<div class="container physics-labs">
+  <h3>Physics Labs</h3>
+  <table class="table table-responsive-sm table-hover">
+    <thead class="thead-light">
+    <tr>
+      <th scope="col" class="title">Lab Name</th>
+      <th scope="col" class="description">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let labCourse of labCourses; let i=index">
+      <th class="title text"><a [routerLink]="['/SingleLab']"><span>{{labCourse.name}}</span></a></th>
+      <td class="description text"><span>{{labCourse.content}}</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
