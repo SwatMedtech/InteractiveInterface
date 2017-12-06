@@ -9,7 +9,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let labCourse of labCourses; let i=index">
-      <th class="title text"><a [routerLink]="['/SingleLab']"><span>{{labCourse.name}}</span></a></th>
+      <th class="title text"><a [routerLink]="['/SingleLab', labCourse._id]"><span>{{labCourse.name}}</span></a></th>
       <td class="description text"><span>{{labCourse.content}}</span></td>
     </tr>
     </tbody>

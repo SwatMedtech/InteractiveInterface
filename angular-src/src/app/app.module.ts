@@ -26,6 +26,10 @@ import { SurveyComponent } from './survey/survey.component';
 import { SurveyEditorComponent } from './survey-editor/survey-editor.component';
 import { LabCoursesComponent } from './lab-courses/lab-courses.component';
 import { SingleLabComponent } from './single-lab/single-lab.component';
+import { SharedDataService } from './services/shared-data.service';
+import { PreLabComponent } from './pre-lab/pre-lab.component';
+import { ExperimentComponent } from './experiment/experiment.component';
+
 
 
 const appRoutes: Routes =  [
@@ -38,7 +42,9 @@ const appRoutes: Routes =  [
     ]
   },
   {path: 'LabCourse', component: LabCoursesComponent},
-  {path: 'SingleLab', component: SingleLabComponent},
+  {path: 'SingleLab/:id', component: SingleLabComponent},
+  {path: 'PreLab/:id', component: PreLabComponent},
+  {path: 'Experiment/:id', component: ExperimentComponent},
   {path: '*', component: HomeComponent},
 ];
 
@@ -60,7 +66,9 @@ const appRoutes: Routes =  [
     SurveyComponent,
     SurveyEditorComponent,
     LabCoursesComponent,
-    SingleLabComponent
+    SingleLabComponent,
+    PreLabComponent,
+    ExperimentComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +78,7 @@ const appRoutes: Routes =  [
     HttpClientModule,
     FlashMessagesModule
   ],
-  providers: [AuthService, AuthGuard, RequestService],
+  providers: [AuthService, AuthGuard, RequestService, SharedDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

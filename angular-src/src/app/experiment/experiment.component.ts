@@ -1,20 +1,18 @@
 import { Component, OnInit, OnDestroy  } from '@angular/core';
 import {RequestService} from '../services/request.service';
 import {ActivatedRoute} from '@angular/router';
-
 @Component({
-  selector: 'app-single-lab',
-  templateUrl: './single-lab.component.html',
-  styleUrls: ['./single-lab.component.css']
+  selector: 'app-experiment',
+  templateUrl: './experiment.component.html',
+  styleUrls: ['./experiment.component.css']
 })
-export class SingleLabComponent implements OnInit, OnDestroy {
-  labCourseName: any;
-length: Number;
-labs: Array<any>;
-newLabs: Array<any>;
-  labCourses: Array<any>;
+export class ExperimentComponent implements OnInit, OnDestroy {
+  length: Number;
+  labs: Array<any>;
   id: number;
+  html: any;
   private sub: any;
+  prev: any;
   constructor(private request: RequestService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -23,19 +21,6 @@ newLabs: Array<any>;
   getID() {
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id']; // (+) converts string 'id' to a number
-    });
-    this.getData();
-  }
-  getData() {
-    this.request.labCoursesGet().subscribe(data => {
-      this.length = Object.keys(data).length;
-      this.labCourses = [];
-      for (let i = 0; i < this.length; i++) {
-        this.labCourses.push(data[i]);
-        if (this.labCourses[i]._id === this.id) {
-          this.labCourseName = this.labCourses[i].name;
-        }
-      }
     });
   }
   getLab() {
@@ -50,15 +35,17 @@ newLabs: Array<any>;
     });
   }
   getRightLab() {
-    this.newLabs = [];
     for (let i = 0; i < this.labs.length; i++) {
-      if (this.labs[i].labCourse === this.id ) {
-        this.newLabs.push(this.labs[i]);
+      if (this.labs[i]._id === this.id ) {
+        this.prev = this.labs[i].labCourse;
+        this.html = this.labs[i].experiment;
       }
     }
-    console.log(this.newLabs);
+    // this.html = this.html.slice(0 , this.html.length);
+    console.log(this.html);
   }
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+
 }

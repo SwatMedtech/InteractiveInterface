@@ -1,75 +1,26 @@
+<a [routerLink]="['/LabCourse']" class="previous round">&#8249;</a>
 <div class="container physics-lab">
-  <h3>Physics Lab 3</h3>
-  <p>Physics Lab 3 Description to read about.</p>
-
-  <h4>Prelabs</h4>
+  <h3>{{labCourseName}}</h3>
+  <p>You will find all the Labs that are attached to {{labCourseName}} and that you need to finish <strong>below</strong></p>
+  <br>
+  <br>
+  <h4>Labs:</h4>
   <table class="table table-responsive-sm table-hover">
     <thead class="thead-light">
     <tr>
-      <th scope="col" class="title">Prelab Name</th>
-      <th scope="col" class="description">Description</th>
+      <th scope="col" class="title">Lab Name</th>
+      <th scope="col" class="description">PreLab</th>
+      <th scope="col" class="description">Experiment</th>
+      <th scope="col" class="Prelab">Tutorial</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th class="title text"><span>Prelab 1</span></th>
-      <td class="description text"><span>Prelab 1 description to read about.</span></td>
-    </tr>
-    <tr>
-      <th class="title text"><span>Prelab 2</span></th>
-      <td class="description text"><span>Prelab Lab 2 description to read about.</span></td>
-    </tr>
-    <tr>
-      <th class="title text"><span>Prelab 3</span></th>
-      <td class="description text"><span>Prelab 3 description to read about.</span></td>
-    </tr>
-    </tbody>
-  </table>
-
-  <h4>Lab Experiments</h4>
-  <table class="table table-responsive-sm table-hover">
-    <thead class="thead-light">
-    <tr>
-      <th scope="col" class="title">Lab Experiment Name</th>
-      <th scope="col" class="description">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <th class="title text"><span>Lab Experiment 1</span></th>
-      <td class="description text"><span>Lab Experiment 1 description to read about.</span></td>
-    </tr>
-    <tr>
-      <th class="title text"><span>Lab Experiment 2</span></th>
-      <td class="description text"><span>Lab Experiment 2 description to read about.</span></td>
-    </tr>
-    <tr>
-      <th class="title text"><span>Lab Experiment 3</span></th>
-      <td class="description text"><span>Lab Experiment 3 description to read about.</span></td>
-    </tr>
-    </tbody>
-  </table>
-
-  <h4>Tutorials</h4>
-  <table class="table table-responsive-sm table-hover">
-    <thead class="thead-light">
-    <tr>
-      <th scope="col" class="title">Tutorial Name</th>
-      <th scope="col" class="description">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <th class="title text"><span>Tutorial 1</span></th>
-      <td class="description text"><span>Tutorial 1 description to read about.</span></td>
-    </tr>
-    <tr>
-      <th class="title text"><span>Tutorial 2</span></th>
-      <td class="description text"><span>Tutorial 2 description to read about.</span></td>
-    </tr>
-    <tr>
-      <th class="title text"><span>Tutorial 3</span></th>
-      <td class="description text"><span>Tutorial 3 description to read about.</span></td>
+    <h1 *ngIf="newLabs.length == 0">Nothing has been added yet</h1>
+    <tr *ngFor="let lab of newLabs;">
+      <th class="title text"><span>{{lab.name}}</span></th>
+      <td class="description text"><a [routerLink]="['/PreLab', lab._id]"><span>PreLab</span></a></td>
+      <td class="description text"><a [routerLink]="['/Experiment', lab._id]"><span>Experiment</span></a></td>
+      <td class="description text"><a><span>Tutorial</span></a></td>
     </tr>
     </tbody>
   </table>
